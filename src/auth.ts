@@ -32,7 +32,7 @@ export function buildHmacHeaders(
     requestPath: string
 ): HmacHeaders {
     const date = new Date().toUTCString();
-    const requestLine = `${method.toLowerCase()} ${requestPath} HTTP/1.1`;
+    const requestLine = `${method.toUpperCase()} ${requestPath} HTTP/1.1`;
     const signingString = `date: ${date}\n${requestLine}`;
 
     const signature = crypto
