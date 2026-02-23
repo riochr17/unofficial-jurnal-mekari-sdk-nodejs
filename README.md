@@ -54,7 +54,7 @@ https://developers.mekari.com/dashboard/applications
 ## Usage
 
 ```typescript
-import { JurnalClient } from './dist';
+import { JurnalClient } from 'unofficial-jurnal-mekari-nodejs-sdk';
 
 const client = new JurnalClient({
   clientId: 'YOUR_CLIENT_ID',
@@ -178,7 +178,7 @@ const { journal_entries } = await client.journalEntries.batchCreate([
 ## Error Handling
 
 ```typescript
-import { JurnalApiError } from './dist';
+import { JurnalApiError } from 'unofficial-jurnal-mekari-nodejs-sdk';
 
 try {
   await client.journalEntries.get(99999);
