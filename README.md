@@ -35,11 +35,11 @@ src/
 
 ---
 
-## Installation
+## Dev Installation
 
 ```bash
-npm install
-npm run build
+npm install     # Installation
+npm run build   # Build project
 ```
 
 ---
@@ -190,11 +190,3 @@ try {
 ```
 
 ---
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run build` | Compile TypeScript to `dist/` |
-| `npm run build:watch` | Watch mode |
-| `npm run clean` | Remove `dist/` |
