@@ -1,0 +1,31 @@
+{
+  "name": "unofficial-jurnal-mekari-nodejs-sdk",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "start": "node dist"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "NAIV-INSTRUCTION.md"
+  ],
+  "description": "Node.js / TypeScript SDK for the Jurnal Mekari API",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "jurnal",
+    "mekari",
+    "accounting",
+    "sdk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "typescript": "^5.9.3"
+  }
+}
