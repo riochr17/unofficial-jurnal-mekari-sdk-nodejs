@@ -3,7 +3,11 @@
 TypeScript/Node.js SDK for the [Jurnal Mekari API](https://developers.mekari.com).  
 Uses **zero runtime dependencies** — only Node.js built-ins (`https`, `crypto`).
 
----
+## Installation
+
+```bash
+npm install --save unofficial-jurnal-mekari-nodejs-sdk
+```
 
 ## Project Structure
 
