@@ -26,6 +26,9 @@ src/
     journal-entries/
       types.ts                 ← Journal Entry types
       index.ts                 ← JournalEntriesResource (6 endpoints)
+    vendor-credit-memo-refund/
+      types.ts                 ← Vendor Credit Memo Refund types
+      index.ts                 ← VendorCreditMemoRefundResource (4 endpoints)
 ```
 
 > **Adding a new API section** (e.g. "invoices"):
@@ -171,6 +174,44 @@ const { journal_entries } = await client.journalEntries.batchCreate([
     },
   },
 ]);
+```
+
+---
+
+## Vendor Credit Memo Refund API
+
+| Method | Endpoint | SDK call |
+|---|---|---|
+| POST | `/vendor_credit_memo_refund` | `client.vendorCreditMemoRefund.create(params)` |
+| GET | `/vendor_credit_memo_refund/:id` | `client.vendorCreditMemoRefund.get(id)` |
+| PATCH | `/vendor_credit_memo_refund/:id` | `client.vendorCreditMemoRefund.update(id, params)` |
+| DELETE | `/vendor_credit_memo_refund/:id` | `client.vendorCreditMemoRefund.delete(id)` |
+
+```typescript
+// Get one
+const { vendor_credit_memo_refund } = await client.vendorCreditMemoRefund.get(619);
+
+// Create
+const { vendor_credit_memo_refund } = await client.vendorCreditMemoRefund.create({
+  person_id: 53,
+  deposit_to_id: 14312,
+  credit_memo_refund_lines_attributes: [
+    { credit_memo_id: 736, refund_amount: 1, description: 'note' },
+    { credit_memo_id: 737, refund_amount: 2 },
+  ],
+});
+
+// Update (include line id to update existing lines)
+await client.vendorCreditMemoRefund.update(921, {
+  deposit_to_id: 14312,
+  credit_memo_refund_lines_attributes: [
+    { id: 109, credit_memo_id: 736, refund_amount: 5 },
+    { id: 110, credit_memo_id: 737, refund_amount: 3 },
+  ],
+});
+
+// Delete
+await client.vendorCreditMemoRefund.delete(921);
 ```
 
 ---

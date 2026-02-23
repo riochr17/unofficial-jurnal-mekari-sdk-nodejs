@@ -22,6 +22,7 @@ import { HttpClient } from './http';
 import { JurnalClientConfig } from './types/common';
 import { AccountsResource } from './resources/accounts';
 import { JournalEntriesResource } from './resources/journal-entries';
+import { VendorCreditMemoRefundResource } from './resources/vendor-credit-memo-refund';
 
 export class JurnalClient {
     /** Access all ACCOUNTS endpoints */
@@ -29,6 +30,9 @@ export class JurnalClient {
 
     /** Access all JOURNAL ENTRIES endpoints */
     public readonly journalEntries: JournalEntriesResource;
+
+    /** Access all VENDOR CREDIT MEMO REFUND endpoints */
+    public readonly vendorCreditMemoRefund: VendorCreditMemoRefundResource;
 
     private readonly _http: HttpClient;
 
@@ -39,6 +43,7 @@ export class JurnalClient {
         // Add new resource sections here as they are implemented.
         this.accounts = new AccountsResource(this._http);
         this.journalEntries = new JournalEntriesResource(this._http);
+        this.vendorCreditMemoRefund = new VendorCreditMemoRefundResource(this._http);
     }
 }
 
@@ -81,3 +86,16 @@ export type {
     JournalEntryAttachment,
     JournalEntryTransactionStatus,
 } from './resources/journal-entries';
+
+// Vendor Credit Memo Refund types
+export type {
+    VendorCreditMemoRefund,
+    VendorCreditMemoRefundLine,
+    VendorCreditMemoRefundPerson,
+    VendorCreditMemoRefundTransactionType,
+    VendorCreditMemoRefundTransactionStatus,
+    VendorCreditMemoRefundLineInput,
+    VendorCreditMemoRefundResponse,
+    CreateVendorCreditMemoRefundParams,
+    UpdateVendorCreditMemoRefundParams,
+} from './resources/vendor-credit-memo-refund';
